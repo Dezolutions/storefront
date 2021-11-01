@@ -1,23 +1,15 @@
-import logo from './logo.svg';
-import './App.css';
+import CustomerForm from './components/CustomerForm/CustomerForm';
+import Info from './components/Info/Info';
+import './app.css'
+import { Layout } from '@shopify/polaris';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <Layout>
+        <Layout.Section oneHalf><CustomerForm/></Layout.Section>
+        <Layout.Section oneHalf><Info/></Layout.Section>
+      </Layout>
     </div>
   );
 }
