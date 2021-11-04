@@ -5,7 +5,9 @@ const initialState = {
     lastName: '',
     phone: '',
     addresses: []
-  }
+  },
+  collectionId: '',
+  productHandle: ''
 }
 const reducer = (state = initialState, action) => {
   switch (action.type) {
@@ -13,6 +15,16 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         customer: action.payload
+      }
+    case 'SET_COLLECTION_ID':
+      return {
+        ...state,
+        collectionId: action.payload
+      }
+    case 'SET_PRODUCT_HANDLE':
+      return {
+        ...state,
+        productHandle: action.payload
       }
     default:
       return state;

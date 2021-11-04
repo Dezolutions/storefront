@@ -29,3 +29,13 @@ export const setCustomer = (customer) => ({
   type: 'SET_CUTOMER_INFO',
   payload: customer
 })
+
+export const setCollectionId = (id) => ({
+  type: 'SET_COLLECTION_ID',
+  payload: id
+})
+
+export const setProductHandle = (handle) => ({
+  type: 'SET_PRODUCT_HANDLE',
+  payload: handle
+})

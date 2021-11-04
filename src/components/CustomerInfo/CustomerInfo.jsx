@@ -1,14 +1,15 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
-import {DescriptionList, Heading, TextStyle} from '@shopify/polaris'
-import styles from './info.module.css'
+import {DescriptionList, Heading, TextStyle, Card} from '@shopify/polaris'
+import styles from './customerinfo.module.css'
 
-const Info = () => {
+const CustomerInfo = () => {
 
   const customer = useSelector(state => state.customer)
-  
+
   return (
-    <>
+    <Card sectioned>
+      <Heading>Customer info</Heading>
       <DescriptionList
         spacing="tight"
         items={[{
@@ -29,7 +30,7 @@ const Info = () => {
         },]}
       />  
       <Heading>Address:</Heading>
-      {customer.addresses?.edges
+      {customer.addresses?.edges?.length
         ? <div className={styles.addressList}>
             <DescriptionList
               spacing="tight"
@@ -51,8 +52,8 @@ const Info = () => {
           </div>
         : <TextStyle variation="subdued">no Address</TextStyle>
       }   
-    </> 
+    </Card> 
   )
 }
 
-export default Info
+export default CustomerInfo

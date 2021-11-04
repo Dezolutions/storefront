@@ -9,13 +9,10 @@ import store from './store/store';
 
 ReactDOM.render(
   <React.StrictMode>
-    <head>
     <link
       rel="stylesheet"
       href="https://unpkg.com/@shopify/polaris@7.2.0/build/esm/styles.css"
     />
-    </head>
-    
     <Provider store={store}>
       <AppProvider><App /></AppProvider>
     </Provider>

@@ -25,7 +25,7 @@ const CustomerForm = () => {
 
   return (
       <Card sectioned>
-        <Heading>Customer info</Heading>
+        <Heading>Customer form</Heading>
         <TextField label="Enter email" type="text" value={email} onChange={onChangeEmail} />
         <TextField label="Enter password" type="password" value={password} onChange={onChangePassword} />
         <div className={styles.button}><Button onClick={onSubmit} primary>Submit</Button></div>
