@@ -10,12 +10,18 @@ export const onSubmitForm = (email, password) => (dispatch) => {
         "password": password
       },
     })
-    .then(({ data: { customerAccessTokenCreate: { customerAccessToken: { accessToken }}}}) => dispatch(getCustomerInfo(accessToken)))
+    .then(({ data: { customerAccessTokenCreate: { customerAccessToken,customerUserErrors}}}) => {
+      customerUserErrors && dispatch(getCustomerError(customerUserErrors))
+      customerAccessToken && dispatch(getCustomerInfo(customerAccessToken.accessToken))
+    })
   } catch (error) {
     console.log(error)
   }
 }
-
+export const getCustomerError = (customerUserErrors) => ({
+  type: 'CUSTOMER_ERROR',
+  payload: customerUserErrors
+})
 export const getCustomerInfo = (customerToken) => (dispatch) => {
   try {
     fetchData(GET_CUSTOMER_DATA,{ "customerAccessToken": customerToken })

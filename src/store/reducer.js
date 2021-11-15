@@ -16,6 +16,11 @@ const reducer = (state = initialState, action) => {
         ...state,
         customer: action.payload
       }
+    case 'CUSTOMER_ERROR':
+      return {
+        ...state,
+        customer: action.payload
+      }
     case 'SET_COLLECTION_ID':
       return {
         ...state,

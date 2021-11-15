@@ -1,6 +1,6 @@
 import CustomerForm from './components/CustomerForm/CustomerForm';
 import CustomerInfo from './components/CustomerInfo/CustomerInfo';
-import './app.css'
+import './App.css'
 import { Layout } from '@shopify/polaris';
 import CollectionList from './components/CollectionList/CollectionList';
 import CollectionInfo from './components/CollectionInfo/CollectionInfo';
